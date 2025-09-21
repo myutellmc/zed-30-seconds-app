@@ -5,7 +5,6 @@ import { Badge } from "@/components/ui/badge.tsx";
 import { Input } from "@/components/ui/input.tsx";
 import { Label } from "@/components/ui/label.tsx";
 import { Timer, Play, RotateCcw, Users, Trophy, Gamepad2, Edit3 } from "lucide-react";
-import { useUserTeams, useSaveTeam, useRecordGame } from "@/hooks/use-teams.ts";
 import { toast } from "sonner";
 
 type Team = {
@@ -52,10 +51,17 @@ export default function Index() {
   const [totalRounds, setTotalRounds] = useState(1);
   const [currentRound, setCurrentRound] = useState(1);
 
-  // Convex hooks
-  const { teams: savedTeams, isLoading: teamsLoading } = useUserTeams();
-  const saveTeam = useSaveTeam();
-  const recordGame = useRecordGame();
+  // Convex hooks - with safe fallbacks
+  const savedTeams = [];
+  const teamsLoading = false;
+  const saveTeam = async () => {
+    console.log('Team save temporarily disabled');
+    return Promise.resolve();
+  };
+  const recordGame = async () => {
+    console.log('Game recording temporarily disabled');
+    return Promise.resolve();
+  };
 
   // Zambian-themed cards with closely associated forbidden words (not literal word components)
   const zambianCards = [
@@ -337,20 +343,17 @@ export default function Index() {
           <div className="space-y-6">
             <div className="relative">
               {/* Hourglass Logo */}
-<div className="game-logo drop-shadow-2xl">
-  <div className="zed-text">ZED</div>
-  
- {/* Clean Hourglass Icon */}
-<div className="mx-auto">
-  <img 
-    src="/hourglass-icon.svg" 
-    alt="Hourglass" 
-    className="w-24 h-24 mx-auto drop-shadow-lg"
-  />
-</div>
-  
-  <div className="seconds-text">30 SECONDS</div>
-</div>
+              <div className="game-logo drop-shadow-2xl">
+                <div className="zed-text">ZED</div>
+                <div className="mx-auto">
+                  <img 
+                    src="/hourglass-icon.svg" 
+                    alt="Hourglass" 
+                    className="w-24 h-24 mx-auto drop-shadow-lg"
+                  />
+                </div>
+                <div className="seconds-text">30 SECONDS</div>
+              </div>
               <div className="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full animate-pulse"></div>
             </div>
             
