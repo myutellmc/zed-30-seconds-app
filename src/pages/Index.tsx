@@ -340,12 +340,12 @@ export default function Index() {
 <div className="game-logo drop-shadow-2xl">
   <div className="zed-text">ZED</div>
   
-  {/* Clean Hourglass Icon */}
+ {/* Clean Hourglass Icon */}
 <div className="mx-auto">
   <img 
     src="/hourglass-icon.svg" 
     alt="Hourglass" 
-    className="w-28 h-28 mx-auto drop-shadow-lg"
+    className="w-24 h-24 mx-auto drop-shadow-lg"
   />
 </div>
   
