@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>⏳ Zed 30 Seconds - Zambian Word Game</title>
+    <meta name="description" content="The ultimate Zambian word guessing game! Teams compete in 30-second rounds describing Zambian culture, places, and traditions without using forbidden words." />
+    <meta name="author" content="Zed" />
+    
+    <!-- Favicon with new filenames and cache busting -->
+    <link rel="icon" type="image/x-icon" href="/hourglass.ico?t=2024092116" />
+    <link rel="icon" type="image/svg+xml" href="/hourglass-icon.svg?t=2024092116" />
+    <link rel="shortcut icon" href="/hourglass.ico?t=2024092116" />
+    <link rel="apple-touch-icon" href="/game-icon-180.svg?t=2024092116" />
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- iOS specific meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="⏳ Zed 30s" />
+    
+    <!-- Theme colors -->
+    <meta name="theme-color" content="#198D19" />
+    <meta name="msapplication-TileColor" content="#198D19" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="/" />
+    <meta property="og:title" content="⏳ Zed 30 Seconds - Zambian Word Game" />
+    <meta property="og:description" content="The ultimate Zambian word guessing game! Teams compete in 30-second rounds describing Zambian culture, places, and traditions without using forbidden words." />
+    <meta property="og:image" content="/game-icon-512.svg?t=2024092116" />
+    <meta property="og:image:type" content="image/svg+xml" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:title" content="⏳ Zed 30 Seconds - Zambian Word Game" />
+    <meta name="twitter:description" content="The ultimate Zambian word guessing game! Teams compete in 30-second rounds describing Zambian culture, places, and traditions without using forbidden words." />
+    <meta name="twitter:image" content="/game-icon-512.svg?t=2024092116" />
+
+    <!-- Detect dark mode preference and set the class before next-themes loads. This avoids a flash of unstyled content (FOUC) when the page loads. -->
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem("theme");
+          if (theme === "system" || !theme) {
+            var prefersDark = window.matchMedia(
+              "(prefers-color-scheme: dark)",
+            ).matches;
+            theme = prefersDark ? "dark" : "light";
+          }
+          document.documentElement.classList.add(theme);
+        } catch (e) {}
+      })();
+    </script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+              console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+      }
+    </script>
+    
+    <link href="/src/index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

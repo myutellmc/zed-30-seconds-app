@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- White background -->
+  <circle cx="60" cy="60" r="58" fill="white" stroke="none"/>
+  
+  <!-- Hourglass emoji -->
+  <text x="60" y="80" font-family="Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" 
+        font-size="72" text-anchor="middle" fill="black">⏳</text>
+</svg>
