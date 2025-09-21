@@ -13,13 +13,6 @@ type Team = {
   score: number;
 };
 
-type SavedTeam = {
-  _id: string;
-  name: string;
-  members: string[];
-  gamesPlayed: number;
-};
-
 // Helper component for handling game completion effect
 function GameCompleteEffect({ isGameComplete, onComplete }: { isGameComplete: boolean; onComplete: () => void }) {
   useEffect(() => {
@@ -57,18 +50,6 @@ export default function Index() {
   });
   const [totalRounds, setTotalRounds] = useState(1);
   const [currentRound, setCurrentRound] = useState(1);
-
-  // Safe fallbacks for Convex functionality
-  const savedTeams: SavedTeam[] = [];
-  const teamsLoading = false;
-  const saveTeam = async (_teamData?: { name: string; members: string[] }) => {
-    console.log('Team save temporarily disabled');
-    return Promise.resolve();
-  };
-  const recordGame = async (_gameData?: any) => {
-    console.log('Game recording temporarily disabled');
-    return Promise.resolve();
-  };
 
   // Zambian-themed cards with closely associated forbidden words (not literal word components)
   const zambianCards = [
@@ -297,19 +278,8 @@ export default function Index() {
       score: teams[i]?.score || 0
     }));
 
-    // Save teams to database
-    try {
-      for (const team of newTeams) {
-        if (team.name !== `Team ${newTeams.indexOf(team) + 1}` && team.members.length > 0) {
-          await saveTeam({ name: team.name, members: team.members });
-        }
-      }
-      toast.success("Teams saved successfully!");
-    } catch (error) {
-      console.log('Team save failed:', error);
-      toast.success("Teams configured successfully!"); // Show success anyway for UX
-    }
-
+    // Teams configured successfully - no backend saving for now
+    toast.success("Teams configured successfully!");
     setTeams(newTeams);
     setGameState('setup');
   };
@@ -318,21 +288,8 @@ export default function Index() {
     const sortedTeams = [...teams].sort((a, b) => b.score - a.score);
     const winningTeam = sortedTeams[0];
     
-    try {
-      await recordGame({
-        teamScores: teams.map(team => ({
-          teamName: team.name,
-          teamMembers: team.members,
-          score: team.score,
-        })),
-        totalRounds,
-        winningTeam: winningTeam.name,
-      });
-      toast.success(`Game complete! ${winningTeam.name} wins with ${winningTeam.score} points!`);
-    } catch (error) {
-      console.log('Game recording failed:', error);
-      toast.success(`Game complete! ${winningTeam.name} wins with ${winningTeam.score} points!`); // Show success anyway for UX
-    }
+    // Game complete - no backend recording for now
+    toast.success(`Game complete! ${winningTeam.name} wins with ${winningTeam.score} points!`);
   };
 
   if (gameState === 'cover') {
