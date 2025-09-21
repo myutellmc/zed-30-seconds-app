@@ -340,25 +340,14 @@ export default function Index() {
 <div className="game-logo drop-shadow-2xl">
   <div className="zed-text">ZED</div>
   
-  {/* Hourglass replacing the game-card */}
-  <div className="relative mx-auto w-24">
-    {/* Top bulb */}
-    <div className="w-24 h-16 bg-gradient-to-b from-amber-200 to-amber-400 rounded-t-full border-2 border-amber-600 relative overflow-hidden">
-      <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-amber-500 to-amber-300"></div>
-    </div>
-    
-    {/* Middle constriction */}
-    <div className="w-4 h-4 bg-amber-600 mx-auto relative">
-      <div className="absolute top-1 left-1/2 w-0.5 h-2 bg-amber-400 transform -translate-x-1/2 animate-pulse"></div>
-    </div>
-    
-    {/* Bottom bulb with "30" */}
-    <div className="w-24 h-16 bg-gradient-to-t from-amber-200 to-amber-400 rounded-b-full border-2 border-amber-600 relative overflow-hidden">
-      <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-b from-amber-500 to-amber-300 flex items-center justify-center">
-        <div className="text-2xl font-bold text-amber-900">30</div>
-      </div>
-    </div>
-  </div>
+  {/* Clean Hourglass Icon */}
+<div className="mx-auto">
+  <img 
+    src="/hourglass-icon.svg" 
+    alt="Hourglass" 
+    className="w-28 h-28 mx-auto drop-shadow-lg"
+  />
+</div>
   
   <div className="seconds-text">30 SECONDS</div>
 </div>
