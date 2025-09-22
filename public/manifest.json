@@ -1,8 +1,9 @@
 {
   "name": "⏳ Zed 30 Seconds - Zambian Word Game",
+  "id": "/zed30s-zambian-word-game/",
   "short_name": "⏳ Zed 30s",
   "description": "The ultimate Zambian word guessing game! Teams compete in 30-second rounds describing Zambian culture, places, and traditions without using forbidden words.",
-  "start_url": "/",
+  "start_url": "https://zed30seconds.surge.sh/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#198D19",
