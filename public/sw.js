@@ -1,7 +1,8 @@
-// Service Worker for Zed 30 Seconds App
+// Service Worker for Zed Rush App
 // Version 1.0.0
 
-const CACHE_NAME = 'zed-30s-game-fixed-v1';
+const CACHE_NAME = 'zed-rush-game-v2';
+const IS_DEV = self.location.hostname === 'localhost' || self.location.hostname === '127.0.0.1';
 const STATIC_CACHE_URLS = [
   '/',
   '/index.html',
@@ -19,7 +20,8 @@ const STATIC_CACHE_URLS = [
   '/game-icon-180.svg',
   '/game-icon-192.svg',
   '/game-icon-512.svg',
-  '/manifest.json'
+  '/manifest.json',
+  '/zed-rush-logo.png'
 ];
 
 // Install event - cache static assets
@@ -63,7 +65,10 @@ self.addEventListener('activate', (event) => {
 // Fetch event - serve from cache, fallback to network
 self.addEventListener('fetch', (event) => {
   console.log('[ServiceWorker] Fetch', event.request.url);
-  
+
+  // In dev mode, never intercept — let Vite handle everything
+  if (IS_DEV) return;
+
   // Skip cross-origin requests
   if (!event.request.url.startsWith(self.location.origin)) {
     return;

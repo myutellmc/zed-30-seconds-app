@@ -12,8 +12,6 @@ export default defineConfig({
     allowedHosts: true,
     hmr: {
       overlay: false,
-      clientPort: 443,
-      protocol: 'wss',
     },
   },
   plugins: [react(), tailwindcss(), hercules()],

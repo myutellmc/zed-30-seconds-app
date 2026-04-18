@@ -1,4 +1,3 @@
-// src/pages/Rules.tsx
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -96,7 +95,7 @@ export default function Rules() {
         {/* Footer */}
         <div className="text-center mt-8">
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            Have fun and play fair! 🎉
+            Have fun and play fair!
           </p>
         </div>
       </div>
