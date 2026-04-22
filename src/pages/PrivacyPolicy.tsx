@@ -26,8 +26,8 @@ export default function PrivacyPolicy() {
             <p>
               Zed Rush (&ldquo;the app&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is a free party word-guessing game
               published by Mutale Chibuta, based in Zambia. For any privacy question or request, email{" "}
-              <a className="text-blue-600 dark:text-blue-400 underline" href="mailto:mutalemchibuta@gmail.com">
-                mutalemchibuta@gmail.com
+              <a className="text-blue-600 dark:text-blue-400 underline" href="mailto:joymwamba39@gmail.com">
+                joymwamba39@gmail.com
               </a>
               .
             </p>
@@ -153,8 +153,8 @@ export default function PrivacyPolicy() {
             <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-2">Contact</h2>
             <p>
               Mutale Chibuta &middot; Lusaka, Zambia &middot;{" "}
-              <a className="text-blue-600 dark:text-blue-400 underline" href="mailto:mutalemchibuta@gmail.com">
-                mutalemchibuta@gmail.com
+              <a className="text-blue-600 dark:text-blue-400 underline" href="mailto:joymwamba39@gmail.com">
+                joymwamba39@gmail.com
               </a>
             </p>
           </section>
