@@ -93,9 +93,12 @@ export default function Rules() {
         </div>
 
         {/* Footer */}
-        <div className="text-center mt-8">
+        <div className="text-center mt-8 space-y-2">
           <p className="text-sm text-gray-500 dark:text-gray-400">
             Have fun and play fair!
+          </p>
+          <p className="text-xs text-gray-400 dark:text-gray-500">
+            <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
           </p>
         </div>
       </div>
